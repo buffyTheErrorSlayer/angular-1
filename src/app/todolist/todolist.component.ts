@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-todolist',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.scss'
 })
@@ -28,6 +30,11 @@ export class TodolistComponent {
 
   deleteTask(id: number): void {
     this.tasks = this.tasks.filter(task => task.id!== id);
+    this.sauvegarde()
+  }
+
+  markAsCompleted(id: number): void {
+    this.tasks = this.tasks.map(task => task.id === id? {...task, completed:!task.completed} : task);
     this.sauvegarde()
   }
 
