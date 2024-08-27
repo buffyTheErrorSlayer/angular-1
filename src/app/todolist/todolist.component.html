@@ -1,30 +1,31 @@
-
 <div class="todo-container">
-
-    <div class="todo-add">
-        <input class="todo-add-input" placeholder="ajouter une nouvelle tâche"  [(ngModel)]="newTask"/>
-        <div class="todo-add-button" (click)="addTask(newTask)"><i class="fa-solid fa-square-plus"></i></div>
+  <div class="todo-add">
+    <input
+      class="todo-add-input"
+      placeholder="ajouter une nouvelle tâche"
+      [(ngModel)]="newTask"
+    />
+    <div class="todo-add-button" (click)="addTask(newTask)">
+      <i class="fa-solid fa-square-plus"></i>
     </div>
+  </div>
 
-    <div class="todo-list">
-
-        @for (task of tasks; track $index) {
-            <div class="todo-list-item">
-                <div> {{task.title}} </div>
-                <div class="todo-list-item-actions">
-                    <i [ngClass]="{
-    'fa-regular': true,
-    'fa-square-check': task.completed,
-    'fa-square': !task.completed
-  }"  (click)="markAsCompleted(task.id)"></i>
-                    <i class="fa-solid fa-trash" (click)="deleteTask(task.id)"></i>
-                </div>
-            </div>
-        }
-
-
-
-        
-    </div>
-
+  <div class="todo-list">
+    @for (task of tasks; track $index) {
+      <div class="todo-list-item">
+        <div>{{ task.title }}</div>
+        <div class="todo-list-item-actions">
+          <i
+            [ngClass]="{
+              'fa-regular': true,
+              'fa-square-check': task.completed,
+              'fa-square': !task.completed,
+            }"
+            (click)="markAsCompleted(task.id)"
+          ></i>
+          <i class="fa-solid fa-trash" (click)="deleteTask(task.id)"></i>
+        </div>
+      </div>
+    }
+  </div>
 </div>
