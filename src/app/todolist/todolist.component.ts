@@ -13,15 +13,19 @@ export class TodolistComponent {
   tasks: { id: number; title: string; completed: boolean }[] = [];
   newTask : string = '';
 
+  ngOnInit(){
+    const storedTasks = localStorage.getItem('tasks');
+    if(storedTasks){
+      this.tasks = JSON.parse(storedTasks);
+    }
+  }
+
   addTask(title: string): void {
     this.tasks.push({ id: Date.now(), title, completed: false });
+    this.newTask = "";
     this.sauvegarde()
   }
 
-  removeTask(id: number): void {
-    this.tasks = this.tasks.filter(task => task.id!== id);
-    this.sauvegarde()
-  }
 
   sauvegarde() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
