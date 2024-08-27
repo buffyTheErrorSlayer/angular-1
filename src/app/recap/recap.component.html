@@ -1,1 +1,25 @@
-<p>recap works!</p>
+<div class="recap">
+    <div class="todo-ongoing">
+        <div class="todo-ongoing-header">En cours ( {{ongoingTasksCount}} )</div>
+        <div class="todo-ongoing-list">
+            @for (task of filterOngoingTasks(); track task.id) {
+                <div class="todo-done-list-item">
+                    {{task.title}}
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="todo-done">
+        <div class="todo-done-header">Finies ( {{doneTasksCount}} )</div>
+        <div class="todo-done-list">
+            @for (task of filterDoneTasks(); track task.id) {
+                <div class="todo-done-list-item">
+                    {{task.title}}
+                </div>
+            }
+            
+        </div>
+
+    </div>    
+</div>
