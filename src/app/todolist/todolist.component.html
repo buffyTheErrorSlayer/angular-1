@@ -12,7 +12,11 @@
             <div class="todo-list-item">
                 <div> {{task.title}} </div>
                 <div class="todo-list-item-actions">
-                    <i [ngClass]="['fa-regular', { 'fa-square-check' : task.completed }]" (click)="markAsCompleted(task.id)"></i>
+                    <i [ngClass]="{
+    'fa-regular': true,
+    'fa-square-check': task.completed,
+    'fa-square': !task.completed
+  }"  (click)="markAsCompleted(task.id)"></i>
                     <i class="fa-solid fa-trash" (click)="deleteTask(task.id)"></i>
                 </div>
             </div>
