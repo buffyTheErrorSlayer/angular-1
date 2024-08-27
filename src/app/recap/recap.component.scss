@@ -1,0 +1,47 @@
+.recap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .todo{
+        &-ongoing {
+            width: 60%;
+            margin: 3% 0;;
+            &-header{
+                background-color: #006aff;
+                color: white;
+                padding: 5px;
+            }
+
+            &-list{
+                border: 1px solid #006aff;
+
+                &-item{
+                    padding: 5px;
+                }
+            }
+
+        }
+
+        &-done {
+            width: 60%;
+            margin: 3% 0;;
+            &-header{
+                background-color: #00a624;
+                color: white;
+                padding: 5px;
+            }
+
+            &-list{
+                border: 1px solid #00a624;
+
+                &-item{
+                    padding: 5px;
+                }
+            }
+
+        }
+    }
+}

@@ -3,7 +3,7 @@
         <div class="todo-ongoing-header">En cours ( {{ongoingTasksCount}} )</div>
         <div class="todo-ongoing-list">
             @for (task of filterOngoingTasks(); track task.id) {
-                <div class="todo-done-list-item">
+                <div class="todo-ongoing-list-item">
                     {{task.title}}
                 </div>
             }
