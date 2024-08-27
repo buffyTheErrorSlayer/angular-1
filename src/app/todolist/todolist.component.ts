@@ -26,6 +26,11 @@ export class TodolistComponent {
     this.sauvegarde()
   }
 
+  deleteTask(id: number): void {
+    this.tasks = this.tasks.filter(task => task.id!== id);
+    this.sauvegarde()
+  }
+
 
   sauvegarde() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));

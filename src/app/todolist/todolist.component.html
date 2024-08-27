@@ -11,7 +11,10 @@
         @for (task of tasks; track $index) {
             <div class="todo-list-item">
                 <div> {{task.title}} </div>
-                <div><i class="fa-regular fa-square"></i></div>
+                <div class="todo-list-item-actions">
+                    <i class="fa-regular fa-square"></i>
+                    <i class="fa-solid fa-trash" (click)="deleteTask(task.id)"></i>
+                </div>
             </div>
         }
 
